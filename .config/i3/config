@@ -159,3 +159,7 @@ bar {
 bindsym XF86MonBrightnessUp exec brightness up
 bindsym XF86MonBrightnessDown exec brightness down
 
+# Multimedia keys - volume
+bindsym XF86AudioRaiseVolume exec amixer -c 0 -- sset Master playback 6dB+
+bindsym XF86AudioLowerVolume exec amixer -c 0 -- sset Master playback 6dB-
+bindsym XF86AudioMute exec amixer set Master toggle
