@@ -166,3 +166,6 @@ bindsym XF86AudioMute exec amixer set Master toggle
 
 # Multimedia keys -- microphone
 bindsym XF86AudioMicMute exec amixer set Capture toggle
+
+# Screenlock
+bindsym $mod+Insert exec i3lock
