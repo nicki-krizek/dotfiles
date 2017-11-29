@@ -163,3 +163,6 @@ bindsym XF86MonBrightnessDown exec brightness down
 bindsym XF86AudioRaiseVolume exec amixer -c 0 -- sset Master playback 6dB+
 bindsym XF86AudioLowerVolume exec amixer -c 0 -- sset Master playback 6dB-
 bindsym XF86AudioMute exec amixer set Master toggle
+
+# Multimedia keys -- microphone
+bindsym XF86AudioMicMute exec amixer set Capture toggle
