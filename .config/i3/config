@@ -176,3 +176,14 @@ bindsym $mod+m exec thunderbird
 
 # Workspace assignment
 assign [class="^Thunderbird$"] 5
+
+
+# Colors
+# class                 border  backgr. text    indicator child_border
+# BEGIN work
+#client.focused          #cc7100 #ff9900 #ffffff #e6e600   #ffad33
+# END work
+
+
+# Startup scripts / applications
+exec --no-startup-id feh --bg-scale ~/Pictures/background.png
