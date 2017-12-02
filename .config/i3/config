@@ -169,3 +169,10 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle
 
 # Screenlock
 bindsym $mod+Insert exec i3lock
+
+# Application keybinding
+bindsym $mod+m exec thunderbird
+
+
+# Workspace assignment
+assign [class="^Thunderbird$"] 5
