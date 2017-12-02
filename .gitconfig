@@ -1,0 +1,15 @@
+[user]
+# BEGIN personal
+	#email = tomas.krizek@mailbox.org
+	#name = Tomas Krizek
+	#signingkey = 0xB2F27B7221DCD363
+# END personal
+# BEGIN work
+	#email = tkrizek@redhat.com
+	#name = Tomas Krizek
+	#signingkey = 0xA1FBA5F7EF8C4869
+# END work
+[gpg]
+	program = gpg2
+[commit]
+	gpgsign = true
