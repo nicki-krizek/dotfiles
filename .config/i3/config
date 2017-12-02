@@ -183,6 +183,9 @@ assign [class="^Thunderbird$"] 5
 # BEGIN work
 #client.focused          #cc7100 #ff9900 #ffffff #e6e600   #ffad33
 # END work
+# BEGIN personal
+#client.focused          #004d00 #006600 #ffffff #00e600   #009900
+# END personal
 
 
 # Startup scripts / applications
