@@ -175,6 +175,7 @@ bindsym $mod+m exec thunderbird
 
 
 # Workspace assignment
+assign [class="^Firefox$"] 4
 assign [class="^Thunderbird$"] 5
 
 
