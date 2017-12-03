@@ -4,6 +4,7 @@ general {
 	interval = 5
 }
 
+order += "vpn_status"
 order += "wireless wlp2s0"
 order += "ethernet enp0s31f6"
 order += "disk /"
@@ -55,8 +56,14 @@ disk "/home" {
 
 ethernet enp0s31f6 {
 	format_up = "E: %ip (%speed)"
+	color_bad = "#ffffff"
 }
 
 wireless wlp2s0 {
 	format_up = "W: %ip (%essid %quality %bitrate)"
 } 
+
+vpn_status {
+	format = "VPN: {name}|"
+	color_good = "#00ffff"
+}
