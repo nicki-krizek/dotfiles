@@ -4,6 +4,7 @@ general {
 	interval = 5
 }
 
+order += "path_exists vpn"
 order += "vpn_status"
 order += "wireless wlp2s0"
 order += "ethernet enp0s31f6"
@@ -64,6 +65,13 @@ wireless wlp2s0 {
 } 
 
 vpn_status {
-	format = "VPN: {name}|"
+	format = "{name}|"
 	color_good = "#00ffff"
+}
+
+path_exists vpn {
+	path = "/proc/sys/net/ipv4/conf/tun0"
+	color_good = "#00ffff"
+	format = "VPN"
+	format_down = ""
 }
