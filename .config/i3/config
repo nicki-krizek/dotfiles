@@ -191,3 +191,4 @@ assign [class="^Thunderbird$"] 5
 
 # Startup scripts / applications
 exec --no-startup-id feh --bg-scale ~/Pictures/background/2560x1440.png
+exec_always "setxkbmap -layout us,cz -option grp:alt_shift_toggle"

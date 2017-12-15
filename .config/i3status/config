@@ -11,6 +11,7 @@ order += "ethernet enp0s31f6"
 order += "disk /"
 order += "disk /home"
 order += "cpu_usage"
+order += "keyboard_layout"
 order += "volume master"
 order += "battery 0"
 order += "tztime local"
@@ -37,6 +38,11 @@ volume master {
 	format_muted = "♪ (%volume)"
 	mixer = "Master"
 	mixer_idx = 0
+}
+
+keyboard_layout {
+	color_us="#FFFFFF"
+	color_cz="#00FFFF"
 }
 
 cpu_usage {
