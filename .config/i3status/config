@@ -12,7 +12,7 @@ order += "disk /"
 order += "disk /home"
 order += "cpu_usage"
 order += "keyboard_layout"
-order += "volume master"
+order += "volume_status"
 order += "battery 0"
 order += "tztime local"
 
@@ -33,11 +33,16 @@ battery 0 {
 	hide_seconds = true
 }
 
-volume master {
-	format = "♪ %volume"
-	format_muted = "♪ (%volume)"
-	mixer = "Master"
-	mixer_idx = 0
+volume_status {
+	command = "amixer"
+	cache_timeout = 1
+	format = "♪ {percentage}%"
+	format_muted = "♪ ({percentage}%)"
+	thresholds = [
+		(0, "#FFFF00"),
+		(1, "#00FF00")
+	]
+	color_muted = "#FFFF00"
 }
 
 keyboard_layout {
