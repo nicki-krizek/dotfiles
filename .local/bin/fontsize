@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+printf '\33]50;%s\007' xft:Inconsolata:pixelsize=$1
