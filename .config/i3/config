@@ -177,6 +177,9 @@ bindsym $mod+m exec thunderbird
 # Workspace assignment
 assign [class="^Firefox$"] 4
 assign [class="^Thunderbird$"] 5
+assign [class="^Slack$"] 6
+assign [class="^HexChat$"] 6
+assign [class="^Psi$"] 6
 
 
 # Colors
@@ -191,6 +194,13 @@ assign [class="^Thunderbird$"] 5
 
 # Startup scripts / applications
 exec --no-startup-id feh --bg-scale ~/Pictures/background/2560x1440.png
+exec --no-startup-id ssh-agent
 exec_always "setxkbmap -layout 'us,cz(qwerty)' -option grp:alt_shift_toggle"
 exec firefox
 exec thunderbird
+
+# BEGIN work
+#exec psi
+#exec slack
+#exec hexchat
+# END work
