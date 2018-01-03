@@ -5,5 +5,5 @@ set wildmode=longest,list
 execute pathogen#infect()
 
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
