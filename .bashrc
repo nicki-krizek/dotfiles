@@ -11,6 +11,7 @@ fi
 # User specific aliases and functions
 alias vim=/usr/bin/vimx
 
+export EDITOR=/usr/bin/vimx
 export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh
 export MC_SKIN=/home/tkrizek/.mc/lib/mc_solarized_light/mc_solarized_light.ini
 export MAKEFLAGS='-j 5'
