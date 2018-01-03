@@ -12,4 +12,4 @@ fi
 alias vim=/usr/bin/vimx
 
 export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh
-export MC_SKIN=/home/tkrizek/.mc/lib/stra-mc-skin/stra.ini
+export MC_SKIN=/home/tkrizek/.mc/lib/mc_solarized_light/mc_solarized_light.ini
