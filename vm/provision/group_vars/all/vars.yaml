@@ -1,0 +1,4 @@
+---
+user_homes:
+  root: /root
+  vagrant: /home/vagrant

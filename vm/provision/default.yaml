@@ -1,0 +1,12 @@
+---
+- hosts: all
+  roles:
+    - rxvt-unicode
+  gather_facts: false
+
+  # HACK: Ansible requires Python 2, but it's not installed by default in Fedora
+  pre_tasks:
+    - name: install python and deps for ansible modules
+      raw: yum install -y python2 python2-dnf libselinux-python
+    - name: gather facts
+      setup:

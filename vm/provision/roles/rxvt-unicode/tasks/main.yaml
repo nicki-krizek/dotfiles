@@ -1,0 +1,18 @@
+---
+# Fix control keys for rxvt-unicode
+# See: https://wiki.archlinux.org/index.php/Rxvt-unicode#Remote_hosts
+- name: Make sure .terminfo dir exists
+  file:
+    path: "{{ item.value }}/.terminfo/r"
+    state: directory
+    owner: "{{ item.key }}"
+    group: "{{ item.key }}"
+  with_dict: "{{ user_homes }}"
+
+- name: Copy rxvt-unicode configuration
+  copy:
+    src: /usr/share/terminfo/r/rxvt-unicode-256color
+    dest: "{{ item.value }}/.terminfo/r/"
+    owner: "{{ item.key }}"
+    group: "{{ item.key }}"
+  with_dict: "{{ user_homes }}"
