@@ -178,8 +178,8 @@ bindsym $mod+m exec thunderbird
 assign [class="^Firefox$"] 4
 assign [class="^Thunderbird$"] 5
 assign [class="^Slack$"] 6
-assign [class="^HexChat$"] 6
-assign [class="^Psi$"] 6
+assign [class="^Hexchat$"] 6
+assign [class="^psi$"] 6
 
 
 # Colors
