@@ -1,0 +1,23 @@
+---
+- name: install additional packages
+  package:
+    name:
+      - vim
+      - tmux
+      - setroubleshoot
+    state: present
+
+- name: install fedora packager packages
+  package:
+    name:
+      - fedpkg
+      - ansible
+      - python2-dnf
+      - libselinux-python
+      - standard-test-roles
+  when: fedora_packager
+
+- name: install dns packages
+  package:
+    name: bind-utils
+    state: present
