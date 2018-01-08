@@ -13,3 +13,5 @@
 	program = gpg2
 [commit]
 	gpgsign = true
+[core]
+	excludesfile = ~/.gitignore
