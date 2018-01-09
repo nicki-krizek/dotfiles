@@ -1,0 +1,8 @@
+---
+- name: make sure root .ssh dir exists
+  file:
+    path: /root/.ssh
+    state: directory
+
+- name: enable root login
+  shell: cp /home/vagrant/.ssh/authorized_keys /root/.ssh/

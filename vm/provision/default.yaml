@@ -8,6 +8,7 @@
     - rxvt-unicode
     - packages
     - knot
+    - configuration
 
   # HACK: Ansible requires Python 2, but it's not installed by default in Fedora
   gather_facts: false
