@@ -4,8 +4,22 @@
     name:
       - vim
       - tmux
-      - setroubleshoot
     state: present
+
+- name: install RedHat packages
+  package:
+    name:
+      - setroubleshoot
+      - bind-utils
+    state: present
+  when: ansible_distribution == 'RedHat' or ansible_distribution == 'Fedora'
+
+- name: install Debian packages
+  package:
+    name:
+      - dnsutils
+    state: present
+  when: ansible_distribution == 'Debian'
 
 - name: install fedora packager packages
   package:
@@ -16,8 +30,3 @@
       - libselinux-python
       - standard-test-roles
   when: fedora_packager
-
-- name: install dns packages
-  package:
-    name: bind-utils
-    state: present
