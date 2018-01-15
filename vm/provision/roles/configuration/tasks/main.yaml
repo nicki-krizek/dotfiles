@@ -1,8 +1,10 @@
 ---
-- name: make sure root .ssh dir exists
-  file:
-    path: /root/.ssh
-    state: directory
-
-- name: enable root login
-  shell: cp /home/vagrant/.ssh/authorized_keys /root/.ssh/
+- name: make vim behave as terminal
+  lineinfile:
+    create: true
+    line: set mouse=""
+    path: '{{ item }}'
+    state: present
+  with_items:
+    - /root/.vimrc
+    - ~/.vimrc
