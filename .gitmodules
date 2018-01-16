@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/vim-flake8"]
 	path = .vim/bundle/vim-flake8
 	url = https://github.com/nvie/vim-flake8.git
+[submodule "/home/tkrizek/.vim/bundle/vim-mypy"]
+	path = /home/tkrizek/.vim/bundle/vim-mypy
+	url = https://github.com/integralist/vim-mypy
