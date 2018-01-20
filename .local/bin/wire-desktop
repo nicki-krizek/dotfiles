@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cd ~/git/wire-desktop
+npm start
