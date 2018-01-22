@@ -1,6 +1,7 @@
 URxvt.font: xft:Inconsolata:size=12
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
+URxvt.saveLines: 20000
 
 ! Set solarized color scheme
 #define S_yellow        #b58900
