@@ -4,12 +4,6 @@
 [submodule ".mc/lib/mc_solarized_light"]
 	path = .mc/lib/mc_solarized_light
 	url = https://github.com/seraphyn/mc_solarized_light.git
-[submodule ".vim/bundle/nerdcommenter"]
-	path = .vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule ".vim/bundle/vim-flake8"]
 	path = .vim/bundle/vim-flake8
 	url = https://github.com/nvie/vim-flake8.git
-[submodule "/home/tkrizek/.vim/bundle/vim-mypy"]
-	path = /home/tkrizek/.vim/bundle/vim-mypy
-	url = https://github.com/integralist/vim-mypy
