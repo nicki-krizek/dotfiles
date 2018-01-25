@@ -202,7 +202,7 @@ exec thunderbird
 exec spotifywm
 
 # BEGIN work
-#exec psi
-#exec slack
 #exec hexchat
+#exec slack
+#exec psi
 # END work
