@@ -1,4 +1,12 @@
 ---
+- name: permanently turn off selinux
+  selinux:
+    policy: targeted
+    state: permissive
+
+- name: temporarily turn off selinux
+  shell: setenforce 0
+
 - name: make vim behave as terminal
   lineinfile:
     create: true
