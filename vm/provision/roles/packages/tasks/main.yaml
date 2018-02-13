@@ -12,7 +12,7 @@
       - setroubleshoot
       - bind-utils
     state: present
-  when: ansible_distribution == 'RedHat' or ansible_distribution == 'Fedora'
+  when: ansible_os_family == 'RedHat'
 
 - name: install Debian packages
   package:
@@ -20,13 +20,3 @@
       - dnsutils
     state: present
   when: ansible_distribution == 'Debian'
-
-- name: install fedora packager packages
-  package:
-    name:
-      - fedpkg
-      - ansible
-      - python2-dnf
-      - libselinux-python
-      - standard-test-roles
-  when: fedora_packager

@@ -9,6 +9,8 @@
     - packages
     - knot
     - configuration
+    - role: packager
+      when: packager
 
   # HACK: Ansible requires Python 2, but it's not installed by default in Fedora
   gather_facts: false
