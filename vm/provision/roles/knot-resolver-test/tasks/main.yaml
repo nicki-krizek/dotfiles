@@ -1,0 +1,35 @@
+---
+- name: install ansible
+  package:
+    name: ansible
+    state: present
+
+- name: install epel
+  package:
+    name: epel-release
+    state: present
+  when: ansible_distribution == 'CentOS'
+
+- name: install standard-test-roles
+  package:
+    name: standard-test-roles
+    state: present
+
+- name: install knot-resolver (when testing update)
+  package:
+    name: knot-resolver
+    state: present
+  when: test_update
+
+- name: create artifacts dir
+  shell: mkdir /mnt/pkg/knot-resolver/tests/artifacts/{{ hostname }}
+
+- name: find rpm package name
+  shell: ls /mnt/pkg/knot-resolver/tests/{{ rpm }}
+  register: pkg
+
+- name: run tests playbook
+  shell: |
+    ansible-playbook /mnt/pkg/knot-resolver/fedora/tests/tests.yml \
+      -e subjects={{ pkg.stdout }} \
+      -e artifacts=/mnt/pkg/knot-resolver/tests/artifacts/{{ hostname }}

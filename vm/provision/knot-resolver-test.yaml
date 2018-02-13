@@ -1,0 +1,18 @@
+---
+- hosts: all
+
+  remote_user: root
+  become: true
+
+  roles:
+    - knot-resolver-test
+
+  # HACK: Ansible requires Python 2, but it's not installed by default in Fedora
+  gather_facts: false
+  pre_tasks:
+    - name: install python and deps for ansible modules
+      raw: yum install -y python2 python2-dnf libselinux-python
+      ignore_errors: true
+    - name: gather facts
+      setup:
+
