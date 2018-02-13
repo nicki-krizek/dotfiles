@@ -13,8 +13,11 @@
   # HACK: Ansible requires Python 2, but it's not installed by default in Fedora
   gather_facts: false
   pre_tasks:
-    - name: install python and deps for ansible modules
-      raw: yum install -y python2 python2-dnf libselinux-python
-      ignore_errors: true
+    - block:
+        - name: install python and deps for ansible modules
+          raw: yum install -y python2 python2-dnf libselinux-python
+      rescue:  # arch
+        - name: install python2
+          raw: pacman -Sy python2 --noconfirm
     - name: gather facts
       setup:
