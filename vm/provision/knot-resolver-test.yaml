@@ -5,6 +5,7 @@
   become: true
 
   roles:
+    - rxvt-unicode
     - knot-resolver-test
 
   # HACK: Ansible requires Python 2, but it's not installed by default in Fedora
