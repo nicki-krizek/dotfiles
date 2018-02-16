@@ -1,0 +1,18 @@
+#!/bin/bash
+
+lcd_on=$(xrandr | grep '*' | grep '1920x1080')
+mon_on=$(xrandr | grep '*' | grep '2560x1440')
+
+if [ -z "$mon_off" ]; then
+	xrandr --output DP1-2 --auto
+	if [ -n "$(xrandr | grep '*' | grep '2560x1440')" ]; then
+		xrandr --output eDP1 --off
+	fi
+fi
+
+if [ -z "$lcd_on" ]; then
+	xrandr --output eDP1 --auto
+	if [ -n "$(xrandr | grep '*' | grep '1920x1080')" ]; then
+		xrandr --output DP1-2 --off
+	fi
+fi
