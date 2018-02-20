@@ -23,7 +23,7 @@ Vagrant.configure(2) do |config|
             ansible.playbook = "../provision/knot-resolver-test.yaml"
             ansible.extra_vars = {
                 test_update: true,
-                rpm: 'knot-resolver-*.el7.centos.x86_64.rpm',
+                rpm: 'knot-resolver-*.el7.*x86_64.rpm',
                 hostname: 'centos-7-kresd-update',
             }
         end

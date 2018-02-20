@@ -4,6 +4,9 @@
   remote_user: root
   become: true
 
+  vars:  # defaults
+    packager: false
+
   roles:
     - rxvt-unicode
     - packages
