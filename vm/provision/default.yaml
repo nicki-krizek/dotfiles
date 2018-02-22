@@ -19,10 +19,14 @@
   gather_facts: false
   pre_tasks:
     - block:
-        - name: install python and deps for ansible modules
+        - name: install python and deps for ansible modules (redhat)
           raw: yum install -y python2 python2-dnf libselinux-python
-      rescue:  # arch
-        - name: install python2
-          raw: pacman -Sy python2 --noconfirm
+      rescue:
+        - block:  # arch
+            - name: install python2 (arch)
+              raw: pacman -Sy python2 --noconfirm
+          rescue:
+            - name: install python2 (debian)
+              raw: apt-get install -y python
     - name: gather facts
       setup:
