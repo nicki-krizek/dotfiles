@@ -8,6 +8,7 @@ let mapleader=" "
 autocmd FileType ruby setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd BufWritePost *.py call Flake8()
 
 "remove whitepaces on save
