@@ -195,7 +195,7 @@ assign [class="^Spotify$"] 7
 
 # Startup scripts / applications
 exec --no-startup-id feh --bg-scale ~/Pictures/background/2560x1440.png
-exec_always "setxkbmap -layout 'us,cz(qwerty)' -option grp:alt_shift_toggle"
+exec --no-startup-id "setxkbmap -layout 'us,cz(qwerty)' -option grp:alt_shift_toggle"
 exec firefox
 exec thunderbird
 exec spotifywm
