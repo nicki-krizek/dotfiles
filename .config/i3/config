@@ -206,6 +206,9 @@ exec gpg-connect-agent /bye
 #exec hexchat
 #exec slack
 #exec psi
+#
+## Switch monitor layout
+#exec --no-startup-id monswitch
 # END work
 
 # Iterate through workspaces to unmark them as active
