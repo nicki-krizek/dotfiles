@@ -207,3 +207,6 @@ exec gpg-connect-agent /bye
 #exec slack
 #exec psi
 # END work
+
+# Iterate through workspaces to unmark them as active
+exec --no-startup-id "sleep 5 && i3-msg 'workspace 4; workspace 5; workspace 7; workspace 3'"
