@@ -35,7 +35,8 @@
     "swallows": [
        {
          "class": "^Slack$",
-         "instance": "^slack$"
+         "instance": "^slack$",
+         "title": "Slack - CZ.NIC"
        }
     ],
     "type": "con"

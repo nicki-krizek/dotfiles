@@ -196,20 +196,19 @@ assign [class="^Spotify$"] 7
 # Startup scripts / applications
 exec --no-startup-id feh --bg-scale ~/Pictures/background/2560x1440.png
 exec --no-startup-id "setxkbmap -layout 'us,cz(qwerty)' -option grp:alt_shift_toggle"
-exec firefox
+exec --no-startup-idfirefox
 exec thunderbird
 exec spotifywm
 exec gpg-connect-agent /bye
 
 # BEGIN work
 #exec --no-startup-id "i3-msg 'workspace 6; append_layout /home/tkrizek/.config/i3/chat-work.json'"
-#exec hexchat
-#exec slack
-#exec psi
-#
+#exec --no-startup-id "sleep 1 && hexchat"
+#exec --no-startup-id "sleep 1 && slack"
+#exec --no-startup-id "sleep 1 && psi"
 ## Switch monitor layout
 #exec --no-startup-id monswitch
 # END work
 
 # Iterate through workspaces to unmark them as active
-exec --no-startup-id "sleep 5 && i3-msg 'workspace 4; workspace 5; workspace 7; workspace 3'"
+exec --no-startup-id "sleep 5 && i3-msg 'workspace 7; workspace 4; workspace 5; workspace 6'"
