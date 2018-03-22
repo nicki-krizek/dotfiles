@@ -1,12 +1,12 @@
 ---
-- block:
-    - name: permanently turn off selinux
-      selinux:
-        policy: targeted
-        state: permissive
-    - name: temporarily turn off selinux
-      shell: setenforce 0
-  when: ansible_os_family == 'RedHat'
+# - block:
+#     - name: permanently turn off selinux
+#       selinux:
+#         policy: targeted
+#         state: permissive
+#     - name: temporarily turn off selinux
+#       shell: setenforce 0
+#   when: ansible_os_family == 'RedHat'
 
 - name: make vim behave as terminal
   lineinfile:
