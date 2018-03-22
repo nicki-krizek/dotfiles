@@ -12,6 +12,7 @@ WATCHES = [
     ('knot-dns-devel', 'knot'),
     ('knot-resolver-devel', 'knot-resolver'),
     ('knot-dns-latest', 'knot'),
+    ('knot-resolver-latest', 'knot'),
     ('knot-resolver-latest', 'knot-resolver'),
 ]
 
@@ -75,7 +76,10 @@ def tabulate_prj_data(prj_data):
     for distro in distros:
         row = [distro]
         for watch in watches:
-            text = ' '.join(statuses[distro][watch])
+            try:
+                text = ' '.join(statuses[distro][watch])
+            except KeyError:
+                text = ''
             row.append(text)
         rows.append(row)
 
