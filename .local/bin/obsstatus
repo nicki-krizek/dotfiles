@@ -1,0 +1,93 @@
+#!/usr/bin/python3
+from collections import defaultdict
+import subprocess
+from termcolor import colored
+
+from tabulate import tabulate
+
+CONFIG_PATH = '/home/tkrizek/.config/osc/oscrc_tkrizek'
+PROJECT = 'home:CZ-NIC:{repo}/{pkg}'
+
+WATCHES = [
+    ('knot-dns-devel', 'knot'),
+    ('knot-resolver-devel', 'knot-resolver'),
+    ('knot-dns-latest', 'knot'),
+    ('knot-resolver-latest', 'knot-resolver'),
+]
+
+COLORS = {
+    'succeeded': 'green',
+    'succeeded*': 'cyan',
+    'building': 'blue',
+    'blocked': 'blue',
+    'disabled': None,
+    'failed': 'red',
+    'unresolvable': 'red',
+    'broken': 'red',
+    'finished': 'yellow',
+    'finished*': 'yellow',
+    'scheduled': 'blue',
+    'signing': 'blue',
+    'dispatching': 'blue',
+    'excluded': None,
+}
+
+
+def get_data(repo, pkg):
+    data = defaultdict(dict)
+    cmd = subprocess.run(
+        ['osc', '-c', CONFIG_PATH, 'results', PROJECT.format(repo=repo, pkg=pkg)],
+        stdout=subprocess.PIPE,
+        universal_newlines=True)
+    for line in cmd.stdout.split('\n'):
+        fields = line.split()
+        if len(fields) != 3:
+            continue
+        distro = fields[0]
+        arch = fields[1]
+        status = fields[2]
+        data[distro][arch] = status
+    return data
+
+
+def get_colored_status(arch, status):
+    try:
+        color = COLORS[status]
+    except KeyError:
+        color = 'yellow'
+    return colored(arch, color=color)
+
+
+def tabulate_prj_data(prj_data):
+    watches = prj_data.keys()
+    headers = ['Distro'] + ['\n'.join(watch) for watch in watches]
+    statuses = defaultdict(dict)  # distro: {watch1: data}
+
+    for watch, distro_data in prj_data.items():
+        for distro, arch_data in distro_data.items():
+            arch_statuses = []
+            for arch, status in arch_data.items():
+                arch_statuses.append(get_colored_status(arch, status))
+            statuses[distro][watch] = arch_statuses
+
+    distros = sorted(statuses.keys())
+    rows = []
+    for distro in distros:
+        row = [distro]
+        for watch in watches:
+            text = ' '.join(statuses[distro][watch])
+            row.append(text)
+        rows.append(row)
+
+    return tabulate(rows, headers, tablefmt='fancy_grid')
+
+
+def print_prj_status(watches):
+    prj_data = {}
+    for watch in watches:
+        prj_data[watch] = get_data(*watch)
+    print(tabulate_prj_data(prj_data))
+
+
+if __name__ == '__main__':
+    print_prj_status(WATCHES)

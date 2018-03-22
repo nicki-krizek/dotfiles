@@ -1,0 +1,2 @@
+#!/bin/bash
+watch -cn 5 obsstatus
