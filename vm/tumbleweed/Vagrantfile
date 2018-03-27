@@ -7,8 +7,9 @@ Vagrant.configure(2) do |config|
     #config.ssh.username = "root"
 
     config.vm.synced_folder "./", "/vagrant",
-        type: "nfs",
-        nfs_udp: false
+        type: "rsync"
+#        type: "nfs",
+#        nfs_udp: false
 
     config.vm.box = "opensuse/openSUSE-Tumbleweed-x86_64"
 #    config.vm.box_version = ""
