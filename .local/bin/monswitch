@@ -1,18 +1,23 @@
 #!/bin/bash
 
-lcd_on=$(xrandr | grep '*' | grep '1920x1080')
-mon_on=$(xrandr | grep '*' | grep '2560x1440')
-
-if [ -z "$mon_off" ]; then
-	xrandr --output DP1-2 --auto
-	if [ -n "$(xrandr | grep '*' | grep '2560x1440')" ]; then
-		xrandr --output eDP1 --off
-	fi
-fi
-
-if [ -z "$lcd_on" ]; then
+# If LCD isn't turned on, attempt to reactivate it
+if [ -z "$(xrandr | grep -B 1 '[*]' | grep 'eDP1')" ]; then
 	xrandr --output eDP1 --auto
-	if [ -n "$(xrandr | grep '*' | grep '1920x1080')" ]; then
+	if [ -n "$(xrandr | grep -B 1 '[*]' | grep 'eDP1')" ]; then
 		xrandr --output DP1-2 --off
+		xrandr --output HDMI1 --off
+	fi
+else
+	# Attempt to activate dock monitor
+	xrandr --output DP1-2 --auto
+	if [ -n "$(xrandr | grep -B 1 '[*]' | grep 'DP1-2')" ]; then
+		xrandr --output eDP1 --off
+	else
+		# Attempt to activate HDMI
+		xrandr --output HDMI1 --auto
+		if [ -n "$(xrandr | grep -B 1 '[*]' | grep 'HDMI1')" ]; then
+			pactl set-card-profile 0 output:hdmi-stereo+input:analog-stereo
+			xrandr --output eDP1 --off
+		fi
 	fi
 fi
