@@ -17,3 +17,5 @@
 	excludesfile = ~/.gitignore
 [log]
 	date = iso
+[rebase]
+	autoSquash = True
