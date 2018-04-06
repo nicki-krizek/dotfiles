@@ -12,6 +12,7 @@ order += "ethernet enp0s31f6"
 order += "disk /"
 order += "disk /home"
 order += "cpu_usage"
+order += "load"
 order += "keyboard_layout"
 order += "volume_status"
 order += "battery 0"
@@ -80,7 +81,7 @@ ethernet enp0s31f6 {
 wireless wlp2s0 {
 	format_up = "W: %ip (%essid %quality %bitrate)"
 	color_bad = "#ffffff"
-} 
+}
 
 vpn_status {
 	format = "{name}|"
