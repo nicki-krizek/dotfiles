@@ -3,3 +3,6 @@
 
 # Ansible
 *.retry
+
+# rsync
+.rsync-filter
