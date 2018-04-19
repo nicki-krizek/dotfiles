@@ -180,7 +180,7 @@ assign [class="^Thunderbird$"] 5
 assign [class="^Slack$"] 6
 assign [class="^Hexchat$"] 6
 assign [class="^psi$"] 6
-assign [class="^Spotify$"] 7
+assign [title=".*cmus.*"] 7
 
 
 # Colors
@@ -196,9 +196,9 @@ assign [class="^Spotify$"] 7
 # Startup scripts / applications
 exec --no-startup-id feh --bg-scale ~/Pictures/background/2560x1440.png
 exec --no-startup-id "setxkbmap -layout 'us,cz(qwerty)' -option grp:alt_shift_toggle"
-exec --no-startup-idfirefox
-exec thunderbird
-exec spotifywm
+exec --no-startup-id firefox
+exec --no-startup-id thunderbird
+exec --no-startup-id urxt -e cmus
 exec gpg-connect-agent /bye
 
 # BEGIN work
