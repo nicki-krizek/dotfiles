@@ -4,11 +4,16 @@ general {
 	interval = 5
 }
 
+# BEGIN personal
+#order += "netdata"
+# END personal
 order += "path_exists vpn"
 order += "vpn_status"
 order += "wireless wlp2s0"
-order += "ethernet enp11s0u1u2"
-order += "ethernet enp0s31f6"
+# BEGIN work
+#order += "ethernet enp11s0u1u2"
+#order += "ethernet enp0s31f6"
+# END work
 order += "disk /"
 order += "disk /home"
 order += "cpu_usage"
@@ -93,4 +98,20 @@ path_exists vpn {
 	color_good = "#00ffff"
 	format = "VPN"
 	format_down = ""
+}
+
+netdata {
+	nic = "wlp2s0"
+	thresholds = {
+		"down": [
+			(0, "good"),
+			(20, "degraded"),
+			(100, "bad"),
+		],
+		"total": [
+			(0, "good"),
+			(100, "degraded"),
+			(300, "bad"),
+		],
+	}
 }
