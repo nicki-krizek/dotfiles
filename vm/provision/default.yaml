@@ -6,12 +6,14 @@
 
   vars:  # defaults
     packager: false
+    knot_resolver_repos: true
 
   roles:
     - rxvt-unicode
     - packages
-    - knot
     - configuration
+    - role: knot-resolver-repos
+      when: knot_resolver_repos
     - role: packager
       when: packager
 

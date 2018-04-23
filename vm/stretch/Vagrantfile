@@ -21,6 +21,9 @@ Vagrant.configure(2) do |config|
     config.vm.define "vm"  do |vm|
         vm.vm.provision "ansible" do |ansible|
             ansible.playbook = "../provision/default.yaml"
+            ansible.extra_vars = {
+                knot_resolver_repos: true
+            }
         end
     end
 

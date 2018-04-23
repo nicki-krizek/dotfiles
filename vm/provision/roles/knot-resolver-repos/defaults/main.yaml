@@ -1,0 +1,20 @@
+---
+obs_repos:
+  - knot-resolver-latest
+  # - knot-resolver-devel
+configure_obs_repo:
+  Fedora: |
+    dnf config-manager --add-repo https://download.opensuse.org/repositories/home:CZ-NIC:{{ item }}/Fedora_27/home:CZ-NIC:{{ item }}.repo
+  CentOS: |
+    yum install -y wget &&
+    wget -i wget https://download.opensuse.org/repositories/home:CZ-NIC:{{ item }}/CentOS_7_EPEL/home:CZ-NIC:{{ item }}.repo -O /etc/yum.repos.d/home:CZ-NIC:{{ item }}.repo
+  Debian: |
+    echo 'deb http://download.opensuse.org/repositories/home:/CZ-NIC:/{{ item }}/Debian_9.0/ /' > /etc/apt/sources.list.d/{{ item }}.list &&
+    wget -nv https://download.opensuse.org/repositories/home:CZ-NIC:{{ item }}/Debian_9.0/Release.key -O Release.key &&
+    apt-key add - < Release.key &&
+    apt-get update
+  Ubuntu: |
+    echo 'deb http://download.opensuse.org/repositories/home:/CZ-NIC:/{{ item }}/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/{{ item }}.list &&
+    wget -nv https://download.opensuse.org/repositories/home:CZ-NIC:{{ item }}/xUbuntu_16.04/Release.key -O Release.key &&
+    apt-key add - < Release.key &&
+    apt-get update
