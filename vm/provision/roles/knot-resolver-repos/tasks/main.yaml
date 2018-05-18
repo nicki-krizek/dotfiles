@@ -20,7 +20,7 @@
         insertbefore: '^\[core\]'
         path: /etc/pacman.conf
         state: present
-      with_items: "{{ repos }}"
+      with_items: "{{ obs_repos }}"
     - name: sync repos (Arch)
       shell: pacman -Syu --noconfirm
   when: ansible_distribution == 'Archlinux'
