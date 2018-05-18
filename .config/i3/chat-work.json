@@ -5,60 +5,90 @@
     "floating": "auto_off",
     "geometry": {
        "height": 1396,
-       "width": 1276,
-       "x": 0,
-       "y": 20
-    },
-    "name": "HexChat",
-    "percent": 0.35,
-    "swallows": [
-       {
-         "class": "^Hexchat$",
-         "instance": "^hexchat$"
-       }
-    ],
-    "type": "con"
-}
-
-{
-    "border": "normal",
-    "current_border_width": 2,
-    "floating": "auto_off",
-    "geometry": {
-       "height": 1036,
-       "width": 636,
-       "x": 642,
-       "y": 20
-    },
-    "name": "Slack",
-    "percent": 0.4,
-    "swallows": [
-       {
-         "class": "^Slack$",
-         "instance": "^slack$",
-         "title": "Slack - CZ.NIC"
-       }
-    ],
-    "type": "con"
-}
-
-{
-    "border": "normal",
-    "current_border_width": 2,
-    "floating": "auto_off",
-    "geometry": {
-       "height": 1036,
-       "width": 636,
-       "x": 1280,
+       "width": 508,
+       "x": 512,
        "y": 20
     },
     "name": "Psi",
-    "percent": 0.25,
+    "percent": 0.233333333333333,
     "swallows": [
        {
-         "class": "^psi$"
+           "class": "^psi$"
        }
     ],
     "type": "con"
+}
+
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1396,
+       "width": 508,
+       "x": 2050,
+       "y": 20
+    },
+    "name": "Slack - CZ.NIC",
+    "percent": 0.383333333333333,
+    "swallows": [
+       {
+           "class": "^Slack$",
+           "instance": "^slack$",
+           "title": "^Slack - CZ.NIC$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.383333333333333,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1396,
+               "width": 508,
+               "x": 0,
+               "y": 0
+            },
+            "name": "CZ-NIC/knot-resolver - Gitter - Mozilla Firefox",
+            "percent": 0.5,
+            "swallows": [
+               {
+                   "class": "^Firefox$"
+                   // "title": "^CZ-NIC/knot-resolver - Gitter - Mozilla Firefox$",
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1036,
+               "width": 892,
+               "x": 0,
+               "y": 20
+            },
+            "name": "tkrizek @ freenode / #ipaxit - HexChat",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Hexchat$",
+               "instance": "^hexchat$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
 }
 

@@ -175,7 +175,6 @@ bindsym $mod+m exec thunderbird
 
 
 # Workspace assignment
-assign [class="^Firefox$"] 4
 assign [class="^Thunderbird$"] 5
 assign [class="^Slack$"] 6
 assign [class="^Hexchat$"] 6
@@ -196,16 +195,17 @@ assign [title=".*cmus.*"] 7
 # Startup scripts / applications
 exec --no-startup-id feh --bg-scale ~/Pictures/background/2560x1440.png
 exec --no-startup-id "setxkbmap -layout 'us,cz(qwerty)' -option grp:alt_shift_toggle"
-exec --no-startup-id firefox
+exec --no-startup-id "i3-msg 'workspace 4' && firefox -P default"
 exec --no-startup-id thunderbird
 exec --no-startup-id urxvt -e cmus
 exec gpg-connect-agent /bye
 
 # BEGIN work
-#exec --no-startup-id "i3-msg 'workspace 6; append_layout /home/tkrizek/.config/i3/chat-work.json'"
-#exec --no-startup-id "sleep 1 && hexchat"
-#exec --no-startup-id "sleep 1 && slack"
-#exec --no-startup-id "sleep 1 && psi"
+#exec --no-startup-id "sleep 2; i3-msg 'workspace 6; append_layout /home/tkrizek/.config/i3/chat-work.json'"
+#exec --no-startup-id "sleep 3 && hexchat"
+#exec --no-startup-id "sleep 3 && slack"
+#exec --no-startup-id "sleep 3 && psi"
+#exec --no-startup-id "sleep 3 && firefox -P gitter --no-remote"
 ## Switch monitor layout
 #exec --no-startup-id monswitch
 # END work
