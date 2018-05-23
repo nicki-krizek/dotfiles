@@ -12,7 +12,12 @@
 [gpg]
 	program = gpg2
 [commit]
-	gpgsign = true
+# BEGIN personal
+	#gpgsign = false
+# END personal
+# BEGIN work
+	#gpgsign = true
+# END work
 [core]
 	excludesfile = ~/.gitignore
 [log]
