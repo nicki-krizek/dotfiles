@@ -210,5 +210,9 @@ exec gpg-connect-agent /bye
 #exec --no-startup-id monswitch
 # END work
 
+# BEGIN personal
+#exec --no-startup-id "i3-msg 'workspace 6' && wire-desktop"
+# END personal
+
 # Iterate through workspaces to unmark them as active
 exec --no-startup-id "sleep 5 && i3-msg 'workspace 7; workspace 4; workspace 5; workspace 6'"
