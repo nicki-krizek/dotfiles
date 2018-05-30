@@ -16,7 +16,7 @@ alias vus="vagrant up; vagrant ssh"
 export SSH_AUTH_SOCK=/run/user/$UID/gnupg/S.gpg-agent.ssh
 
 export EDITOR=/usr/bin/vimx
-export MC_SKIN=/home/tkrizek/.mc/lib/mc_solarized_light/mc_solarized_light.ini
+export MC_SKIN=~/.mc/lib/mc_solarized_light/mc_solarized_light.ini
 export MAKEFLAGS='-j 5'
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
