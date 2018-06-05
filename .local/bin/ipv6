@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# switch between ipv6 on/off at runtime as a workaround for networking issues
+
+IPV6_OFF=$(sysctl net.ipv6.conf.all.disable_ipv6 -n)
+
+if [ $IPV6_OFF -eq 1 ]; then
+	# enable IPv6
+	sudo sysctl -w net.ipv6.conf.all.disable_ipv6=0
+	sudo sysctl -w net.ipv6.conf.default.disable_ipv6=0
+else
+	# disable IPv6
+	sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+	sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+
+fi
