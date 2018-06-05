@@ -1,7 +1,7 @@
 ---
 obs_repos:
   - knot-resolver-latest
-  # - knot-resolver-devel
+  - knot-resolver-devel
 configure_obs_repo:
   Fedora: |
     dnf config-manager --add-repo https://download.opensuse.org/repositories/home:CZ-NIC:{{ item }}/Fedora_27/home:CZ-NIC:{{ item }}.repo
