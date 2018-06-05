@@ -1,4 +1,11 @@
 ---
+- name: update vim-minimal (workaround for conflicts)
+  package:
+    name:
+      - vim-minimal
+    state: latest
+  failed_when: false
+
 - name: install additional packages
   package:
     name:
