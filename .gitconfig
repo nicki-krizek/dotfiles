@@ -1,7 +1,5 @@
 [user]
 # BEGIN personal
-	#email = tomas.krizek@mailbox.org
-	#name = Tomas Krizek
 	#signingkey = 0xB2F27B7221DCD363
 # END personal
 # BEGIN work
