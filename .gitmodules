@@ -7,3 +7,9 @@
 [submodule ".vim/bundle/vim-flake8"]
 	path = .vim/bundle/vim-flake8
 	url = https://github.com/nvie/vim-flake8.git
+[submodule "vim-indentwise"]
+	path = vim-indentwise
+	url = git://github.com/jeetsukumaran/vim-indentwise.git
+[submodule ".vim/bundle/vim-indentwise"]
+	path = .vim/bundle/vim-indentwise
+	url = git://github.com/jeetsukumaran/vim-indentwise.git
