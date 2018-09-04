@@ -180,6 +180,7 @@ assign [class="^Slack$"] 6
 assign [class="^Hexchat$"] 6
 assign [class="^Psi$"] 6
 assign [title=".*cmus.*"] 7
+assign [class="^Spotify$"] 7
 
 
 # Colors
@@ -197,7 +198,8 @@ exec --no-startup-id feh --bg-scale ~/Pictures/background/2560x1440.png
 exec --no-startup-id "setxkbmap -layout 'us,cz(qwerty)' -option grp:alt_shift_toggle"
 exec --no-startup-id "i3-msg 'workspace 4' && firefox -P default"
 exec --no-startup-id thunderbird
-exec --no-startup-id urxvt -e cmus
+# exec --no-startup-id urxvt -e cmus
+exec spotifywm
 exec gpg-connect-agent /bye
 
 # BEGIN work
