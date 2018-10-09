@@ -11,6 +11,7 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType html setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType c setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd FileType lua setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType js setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType md setlocal textwidth=80
