@@ -11,6 +11,8 @@ PROJECT = 'home:CZ-NIC:{repo}/{pkg}'
 WATCHES = [
     ('knot-dns-devel', 'knot'),
     ('knot-resolver-devel', 'knot-resolver'),
+    ('knot-dns-testing', 'knot'),
+    ('knot-resolver-testing', 'knot-resolver'),
     ('knot-dns-latest', 'knot'),
     ('knot-resolver-latest', 'knot'),
     ('knot-resolver-latest', 'knot-resolver'),
