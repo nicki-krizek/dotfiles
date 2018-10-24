@@ -17,15 +17,16 @@
     - role: packager
       when: packager
 
-  # HACK: Ansible requires Python 2, but it's not installed by default in Fedora
+  # HACK: Ansible requires Python 2, but it's not installed by default in all distros
   gather_facts: false
   pre_tasks:
-    - block:
-        - name: install ansible deps (redhat)
-          raw: "yum install -y python2 python2-dnf libselinux-python ||:"
-        - name: install ansible deps (arch)
-          raw: "pacman -Sy python2 --noconfirm ||:"
-        - name: install ansible deps (debian, opensuse)
-          raw: "apt-get install -y python"
+    - name: install python and deps for ansible modules
+      raw: |
+        yum install -y python2 python2-dnf libselinux-python || \
+        pacman -Sy python2 --noconfirm || \
+        (zypper --gpg-auto-import-keys refresh && zypper install -y python) || \
+        (apt-get update && apt-get install -y python) || \
+        :
+      ignore_errors: true
     - name: gather facts
       setup:
