@@ -24,3 +24,9 @@ export LC_TIME=en_DK
 
 export DEBEMAIL="tomas.krizek@nic.cz"
 export DEBFULLNAME="Tomas Krizek"
+
+export HISTFILESIZE=50000
+export HISTSIZE=50000
+export HISTTIMEFORMAT="[%F %T] "
+# Force prompt to write history after every command.
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
