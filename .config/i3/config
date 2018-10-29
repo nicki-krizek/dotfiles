@@ -213,7 +213,7 @@ exec gpg-connect-agent /bye
 # END work
 
 # BEGIN personal
-#exec --no-startup-id "i3-msg 'workspace 6' && wire-desktop"
+#exec --no-startup-id "i3-msg 'workspace 6' && flatpak run com.wire.WireDesktop"
 # END personal
 
 # Iterate through workspaces to unmark them as active
