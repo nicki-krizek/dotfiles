@@ -12,6 +12,7 @@ fi
 alias vim=/usr/bin/vimx
 alias vdus="vagrant destroy; vagrant up; vagrant ssh"
 alias vus="vagrant up; vagrant ssh"
+alias gdiff="git difftool --no-symlinks --dir-diff"
 
 export SSH_AUTH_SOCK=/run/user/$UID/gnupg/S.gpg-agent.ssh
 
