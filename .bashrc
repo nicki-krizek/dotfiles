@@ -21,8 +21,6 @@ export MC_SKIN=~/.mc/lib/mc_solarized_light/mc_solarized_light.ini
 export MAKEFLAGS='-j 5'
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
-export LC_TIME=en_DK
-
 export DEBEMAIL="tomas.krizek@nic.cz"
 export DEBFULLNAME="Tomas Krizek"
 
