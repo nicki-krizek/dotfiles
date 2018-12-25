@@ -4,7 +4,7 @@
 #
 # Requirements: light
 
-steps=(0 2 5 9 15 25 40 65 100)
+steps=(0 1 2 5 9 15 25 40 65 100)
 
 current_brightness=$(light -r)
 max_brightness=$(cat /sys/class/backlight/intel_backlight/max_brightness)
