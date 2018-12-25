@@ -30,7 +30,7 @@ font pango:Inconsolata 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt256c -fade 0
+bindsym $mod+Return exec kitty /bin/bash
 
 # kill focused window
 bindsym $mod+Shift+q kill
