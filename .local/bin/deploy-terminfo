@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+ssh "$@" mkdir -p  ~/.terminfo/${TERM:0:1}
+scp /usr/share/terminfo/${TERM:0:1}/$TERM "$@":~/.terminfo/${TERM:0:1}/
