@@ -9,7 +9,7 @@
     knot_resolver_repos: true
 
   roles:
-    - rxvt-unicode
+    - terminfo
     - packages
     - configuration
     - role: knot-resolver-repos
