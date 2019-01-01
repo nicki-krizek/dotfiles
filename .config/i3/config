@@ -168,7 +168,7 @@ bindsym XF86AudioMute exec amixer set Master toggle && killall -s USR1 py3status
 bindsym XF86AudioMicMute exec amixer set Capture toggle
 
 # Screenlock
-bindsym $mod+Insert exec ~/.local/bin/lock
+bindsym $mod+Insert exec i3lock -fo
 
 # Application keybinding
 bindsym $mod+m exec thunderbird
@@ -204,4 +204,7 @@ exec --no-startup-id gpg-connect-agent updatestartuptty /bye
 # END work
 
 # Auto-lock on startup
-exec --no-startup-id "~/.local/bin/lock"
+exec --no-startup-id sleep 1; i3lock -fo
+
+# Auto-lock on suspend / DPMS
+exec --no-startupid xss-lock -- i3lock -n -fo
