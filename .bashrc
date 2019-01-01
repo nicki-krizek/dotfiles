@@ -9,15 +9,15 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-alias vim=/usr/bin/vimx
 alias vdus="vagrant destroy; vagrant up; vagrant ssh"
 alias vus="vagrant up; vagrant ssh"
 alias gdiff="git difftool --no-symlinks --dir-diff"
 alias d="kitty +kitten diff"
+alias icat="kitty +kitten icat"
 
 export SSH_AUTH_SOCK=/run/user/$UID/gnupg/S.gpg-agent.ssh
 
-export EDITOR=/usr/bin/vimx
+export EDITOR=/usr/bin/vim
 export MC_SKIN=~/.mc/lib/mc_solarized_light/mc_solarized_light.ini
 export MAKEFLAGS='-j 5'
 export LIBVIRT_DEFAULT_URI=qemu:///system
