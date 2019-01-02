@@ -1,23 +1,27 @@
 #!/bin/bash
 
+internal="eDP-1"
+external="DP-1-2"
+hdmi="HDMI-1"
+
 # If LCD isn't turned on, attempt to reactivate it
-if [ -z "$(xrandr | grep -B 1 '[*]' | grep 'eDP1')" ]; then
-	xrandr --output eDP1 --auto
-	if [ -n "$(xrandr | grep -B 1 '[*]' | grep 'eDP1')" ]; then
-		xrandr --output DP1-2 --off
-		xrandr --output HDMI1 --off
+if [ -z "$(xrandr | grep -B 1 '[*]' | grep $internal)" ]; then
+	xrandr --output $internal --auto
+	if [ -n "$(xrandr | grep -B 1 '[*]' | grep $internal)" ]; then
+		xrandr --output $external --off
+		xrandr --output $hdmi --off
 	fi
 else
 	# Attempt to activate dock monitor
-	xrandr --output DP1-2 --auto
-	if [ -n "$(xrandr | grep -B 1 '[*]' | grep 'DP1-2')" ]; then
-		xrandr --output eDP1 --off
+	xrandr --output $external --auto
+	if [ -n "$(xrandr | grep -B 1 '[*]' | grep $external)" ]; then
+		xrandr --output $internal --off
 	else
 		# Attempt to activate HDMI
-		xrandr --output HDMI1 --auto
-		if [ -n "$(xrandr | grep -B 1 '[*]' | grep 'HDMI1')" ]; then
-			pactl set-card-profile 0 output:hdmi-stereo+input:analog-stereo
-			xrandr --output eDP1 --off
+		xrandr --output $hdmi --auto
+		if [ -n "$(xrandr | grep -B 1 '[*]' | grep $hdmi)" ]; then
+			# pactl set-card-profile 0 output:hdmi-stereo+input:analog-stereo
+			xrandr --output $internal --off
 		fi
 	fi
 fi
