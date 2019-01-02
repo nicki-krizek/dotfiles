@@ -7,6 +7,8 @@
 
 - name: configure OBS repository
   shell: "{{ configure_obs_repo[ansible_distribution] }}"
+  args:
+    warn: false
   with_items: "{{ obs_repos }}"
   when: ansible_distribution != 'Archlinux'
 
