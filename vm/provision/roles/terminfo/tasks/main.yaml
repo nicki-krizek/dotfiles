@@ -11,7 +11,7 @@
 - name: Copy terminfo
   copy:
     src: "/usr/share/terminfo/{{ term[0] }}/{{ term }}"
-    dest: "{{ item.value }}/.terminfo/{{ term }}/"
+    dest: "{{ item.value }}/.terminfo/{{ term[0] }}/{{ term }}/"
     owner: "{{ item.key }}"
     group: "{{ item.key }}"
   with_dict: "{{ user_homes }}"
