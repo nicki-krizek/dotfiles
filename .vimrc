@@ -5,6 +5,8 @@ set autoindent
 
 let mapleader=" "
 
+filetype plugin on
+
 autocmd FileType ruby setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
