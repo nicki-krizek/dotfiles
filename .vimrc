@@ -35,3 +35,6 @@ set scrolloff=8
 "custom colors for indent-guides
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
+
+" highlight search results
+set hls
