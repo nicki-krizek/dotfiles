@@ -1,4 +1,14 @@
 #!/usr/bin/bash
+set -o xtrace
 
-ssh "$@" mkdir -p  ~/.terminfo/${TERM:0:1}
-scp /usr/share/terminfo/${TERM:0:1}/$TERM "$@":~/.terminfo/${TERM:0:1}/
+# Copy terminfo to remote machine
+scp /usr/share/terminfo/${TERM:0:1}/$TERM "$@":tmp-$TERM
+
+# Attempt to copy terminfo to /usr/share
+ssh "$@" sudo -n mv tmp-$TERM /usr/share/terminfo/${TERM:0:1}/$TERM
+
+# If it fails, move terminfo to home
+if [ $? -ne 0 ]; then
+    ssh "$@" mkdir -p  ~/.terminfo/${TERM:0:1}
+    ssh "$@" mv tmp-$TERM ~/.terminfo/${TERM:0:1}/$TERM
+fi
