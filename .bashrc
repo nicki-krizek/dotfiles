@@ -9,7 +9,7 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-alias vdus="vagrant destroy; vagrant up; vagrant ssh"
+alias vdus="vagrant destroy -f; vagrant up; vagrant ssh"
 alias vus="vagrant up; vagrant ssh"
 alias gdiff="git difftool --no-symlinks --dir-diff"
 alias d="kitty +kitten diff"
