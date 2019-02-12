@@ -10,6 +10,7 @@
   package:
     name:
       - vim
+      - git
       - tmux
     state: present
 
