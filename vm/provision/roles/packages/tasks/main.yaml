@@ -12,6 +12,7 @@
       - vim
       - git
       - tmux
+      - tree
     state: present
 
 - name: install RedHat packages
