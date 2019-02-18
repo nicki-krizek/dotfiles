@@ -14,6 +14,7 @@ alias vus="vagrant up; vagrant ssh"
 alias gdiff="git difftool --no-symlinks --dir-diff"
 alias d="kitty +kitten diff"
 alias icat="kitty +kitten icat"
+alias kr="cd $HOME/git/knot-resolver"
 
 export SSH_AUTH_SOCK=/run/user/$UID/gnupg/S.gpg-agent.ssh
 
