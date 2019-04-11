@@ -12,6 +12,7 @@ set tabstop=6 shiftwidth=6
 autocmd FileType ruby setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType meson setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType html setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType js setlocal shiftwidth=4 tabstop=4 expandtab
