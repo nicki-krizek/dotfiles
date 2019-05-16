@@ -18,7 +18,9 @@ alias kr="cd $HOME/git/knot-resolver"
 alias si="makepkg --printsrcinfo > .SRCINFO && git add .SRCINFO"
 alias gut="git"
 alias got="git"
-alias reb="which kresd 2>/dev/null || (rm -rf /tmp/kr_dev; meson build_dev --default-library=static --prefix=/tmp/kr_dev; ninja -C build_dev install)"
+alias reb="which kresd 2>/dev/null || (meson build_dev --default-library=static --prefix=/tmp/kr_dev; rm -rf /tmp/kr_dev; ninja -C build_dev install)"
+alias creb="rm -rf build_dev; reb"
+
 
 export SSH_AUTH_SOCK=/run/user/$UID/gnupg/S.gpg-agent.ssh
 
