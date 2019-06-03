@@ -18,9 +18,8 @@ alias kr="cd $HOME/git/knot-resolver"
 alias si="makepkg --printsrcinfo > .SRCINFO && git add .SRCINFO"
 alias gut="git"
 alias got="git"
-alias reb="which kresd 2>/dev/null || (meson build_dev --default-library=static --prefix=/tmp/kr_dev; rm -rf /tmp/kr_dev; ninja -C build_dev install)"
-alias creb="rm -rf build_dev; reb"
-
+alias mrb="rm -rf build_dev; meson build_dev --default-library=static --prefix=/tmp/kr_dev"
+alias ni="ninja -C build_dev install"
 
 export SSH_AUTH_SOCK=/run/user/$UID/gnupg/S.gpg-agent.ssh
 
@@ -28,6 +27,7 @@ export EDITOR=/usr/bin/vim
 export MC_SKIN=~/.mc/lib/mc_solarized_light/mc_solarized_light.ini
 export MAKEFLAGS='-j 5'
 export LIBVIRT_DEFAULT_URI=qemu:///system
+export VAGRANT_DEFAULT_PROVIDER="libvirt"
 
 export DEBEMAIL="tomas.krizek@nic.cz"
 export DEBFULLNAME="Tomas Krizek"
