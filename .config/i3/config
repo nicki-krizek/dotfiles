@@ -205,7 +205,7 @@ exec --no-startup-id gpg-connect-agent updatestartuptty /bye
 # END work
 
 # Auto-lock on startup
-exec --no-startup-id sleep 1; i3lock -fo
+exec --no-startup-id sleep 1; i3lock -f -c 331111
 
 # Auto-lock on suspend / DPMS
-exec xss-lock -- i3lock -n -fo
+exec xss-lock -- i3lock -n -f -c 331111
