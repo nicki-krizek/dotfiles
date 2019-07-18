@@ -12,7 +12,7 @@
     - terminfo
     - packages
     - configuration
-    - role: knot-resolver-repos
+    - role: obs_repos
       when: knot_resolver_repos
     - role: packager
       when: packager
