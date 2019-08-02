@@ -4,6 +4,8 @@ internal="eDP-1"
 external="DP-1-2"
 hdmi="HDMI-1"
 
+sleepon
+
 # If LCD isn't turned on, attempt to reactivate it
 if [ -z "$(xrandr | grep -B 1 '[*]' | grep $internal)" ]; then
 	xrandr --output $internal --auto
@@ -22,6 +24,7 @@ else
 		if [ -n "$(xrandr | grep -B 1 '[*]' | grep $hdmi)" ]; then
 			pactl set-card-profile 0 output:hdmi-stereo+input:analog-stereo
 			xrandr --output $internal --off
+			sleepoff
 		fi
 	fi
 fi
