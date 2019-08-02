@@ -41,7 +41,7 @@ battery 0 {
 }
 
 volume_status {
-	command = "amixer"
+	command = "pactl"
 	cache_timeout = 1
 	format = "♪ {percentage}%"
 	format_muted = "♪ ({percentage}%)"
