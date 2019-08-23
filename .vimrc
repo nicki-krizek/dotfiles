@@ -22,6 +22,9 @@ autocmd FileType sh setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType rst setlocal foldmethod=manual
 autocmd BufWritePost *.py call Flake8()
 
+" project-specific settings
+autocmd BufNewFile,BufRead /home/tkrizek/git/dnsjit/* set tabstop=4 shiftwidth=4 expandtab
+
 "remove whitepaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
