@@ -10,6 +10,7 @@ Vagrant.configure(2) do |config|
         vm.vm.provision "ansible" do |ansible|
             ansible.playbook = "../provision/default.yaml"
             ansible.extra_vars = {
+              # "obs_repos": ['knot-resolver-latest'],
             }
         end
     end
@@ -19,6 +20,8 @@ Vagrant.configure(2) do |config|
     config.vm.synced_folder "/home/tkrizek/git", "/mnt/git",
         type: "nfs"
     config.vm.synced_folder "/home/tkrizek/pkg", "/mnt/pkg",
+        type: "nfs"
+    config.vm.synced_folder "/home/tkrizek/playground", "/mnt/playground",
         type: "nfs"
 
     config.vm.provider "libvirt" do |domain, override|

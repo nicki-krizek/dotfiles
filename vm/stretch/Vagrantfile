@@ -10,7 +10,8 @@ Vagrant.configure(2) do |config|
         vm.vm.provision "ansible" do |ansible|
             ansible.playbook = "../provision/default.yaml"
             ansible.extra_vars = {
-                knot_resolver_repos: true
+                # knot_resolver_repos: true,
+                obs_repos: ['knot-resolver-testing', 'knot-resolver-latest'],
             }
         end
     end
