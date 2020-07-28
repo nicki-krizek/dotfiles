@@ -42,3 +42,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
 
 " highlight search results
 set hls
+
+" key bindings
+map <F12> :!luacheck % <enter>
