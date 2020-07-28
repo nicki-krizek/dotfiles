@@ -198,7 +198,6 @@ exec --no-startup-id compton -b --backend glx
 exec --no-startup-id feh --bg-scale ~/Pictures/background/active.jpg
 exec --no-startup-id "setxkbmap -layout 'us,cz(qwerty)' -option grp:alt_shift_toggle"
 exec --no-startup-id gpg-connect-agent updatestartuptty /bye
-exec --no-startup-id snixembed --fork
 
 # BEGIN work
 ## Switch monitor layout
