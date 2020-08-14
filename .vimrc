@@ -7,7 +7,7 @@ let mapleader=" "
 
 filetype plugin on
 
-set tabstop=6 shiftwidth=6
+set tabstop=8 shiftwidth=8
 
 autocmd FileType ruby setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab
