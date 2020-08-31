@@ -1,0 +1,27 @@
+---
+- name: install extra packages
+  package:
+    name: git
+
+- block:
+    - name: install fedora packager packages
+      package:
+        name:
+          - fedpkg
+          - ansible
+          - standard-test-roles
+  when: ansible_distribution == 'Fedora'
+
+- block:
+    - name: add packager to makepkg.conf
+      lineinfile:
+        path: /etc/makepkg.conf
+        line: PACKAGER="Tomas Krizek <tomas.krizek@mailbox.org>"
+        state: present
+    - name: install arch packages
+      package:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - base-devel
+  when: ansible_distribution == 'Archlinux'
