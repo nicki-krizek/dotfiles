@@ -21,6 +21,7 @@ alias got="git"
 alias mrb="rm -rf build_dev; meson build_dev --default-library=static --prefix=/tmp/kr_dev"
 alias ni="ninja -C build_dev install"
 alias ipa='echo "Nebudu to delat!"; sleep 1; ip a'
+alias confgit="git --git-dir $HOME/.config/conf.git --work-tree $HOME"
 
 export SSH_AUTH_SOCK=/run/user/$UID/gnupg/S.gpg-agent.ssh
 
