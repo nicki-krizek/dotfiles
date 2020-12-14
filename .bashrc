@@ -33,8 +33,8 @@ export VAGRANT_DEFAULT_PROVIDER="libvirt"
 export DEBEMAIL="tomas.krizek@nic.cz"
 export DEBFULLNAME="Tomas Krizek"
 
-export HISTFILESIZE=50000
-export HISTSIZE=50000
+export HISTFILESIZE=100000
+export HISTSIZE=100000
 export HISTTIMEFORMAT="[%F %T] "
 export HISTCONTROL=ignorespace
 # Force prompt to write history after every command.
