@@ -168,10 +168,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec amixer set Capture toggle
 
 # Screenlock
-bindsym $mod+Insert exec i3lock -f -c 331111
-
-# Application keybinding
-bindsym $mod+m exec thunderbird
+bindsym $mod+Insert exec i3lock -f -c 350000
 
 
 # Workspace assignment
@@ -190,7 +187,7 @@ assign [class="^Thunderbird$"] 5
 
 # Startup scripts / applications
 exec --no-startup-id picom -b --backend glx
-#exec --no-startup-id feh --bg-scale ~/Pictures/background/active.jpg
+exec --no-startup-id hsetroot -solid "#001e26"
 exec --no-startup-id "setxkbmap -layout 'us,cz(qwerty)' -option grp:alt_shift_toggle"
 exec --no-startup-id gpg-connect-agent updatestartuptty /bye
 
@@ -200,7 +197,7 @@ exec --no-startup-id gpg-connect-agent updatestartuptty /bye
 # END work
 
 # Auto-lock on startup
-exec --no-startup-id sleep 1; i3lock -f -c 331111
+exec --no-startup-id sleep 1; i3lock -f -c 350000
 
 # Auto-lock on suspend / DPMS
-exec xss-lock -- i3lock -n -f -c 331111
+exec xss-lock -- i3lock -n -f -c 350000
