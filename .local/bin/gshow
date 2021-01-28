@@ -1,0 +1,5 @@
+#!/bin/bash
+
+COMMIT=${1:-HEAD}
+
+git difftool --no-symlinks --dir-diff $COMMIT..$COMMIT^
