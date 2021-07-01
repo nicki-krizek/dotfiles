@@ -151,6 +151,13 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle
 bindsym $mod+Insert exec swaylock -f -c 350000
 
 
+# Keymap
+input * {
+    xkb_layout "us,cz"
+    xkb_variant ",qwerty"
+    xkb_options "grp:win_space_toggle"
+}
+
 # Workspace assignment
 assign [class="^Thunderbird$"] 5
 
