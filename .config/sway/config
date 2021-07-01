@@ -159,6 +159,12 @@ input * {
 }
 
 
+# Switch turn off laptop monitor when lid is closed
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+
 # Wallpaper
 output * bg #000000 solid_color
 
