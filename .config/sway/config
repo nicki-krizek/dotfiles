@@ -158,6 +158,11 @@ input * {
     xkb_options "grp:win_space_toggle"
 }
 
+
+# Wallpaper
+output * bg #000000 solid_color
+
+
 # Workspace assignment
 assign [class="^Thunderbird$"] 5
 
