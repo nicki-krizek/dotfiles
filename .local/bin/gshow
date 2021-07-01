@@ -2,4 +2,4 @@
 
 COMMIT=${1:-HEAD}
 
-git difftool --no-symlinks --dir-diff $COMMIT..$COMMIT^
+git difftool --no-symlinks --dir-diff $COMMIT^..$COMMIT
