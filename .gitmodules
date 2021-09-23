@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/vim-kivy"]
 	path = .vim/bundle/vim-kivy
 	url = https://github.com/farfanoide/vim-kivy.git
+[submodule ".vim/bundle/rust.vim"]
+	path = .vim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
