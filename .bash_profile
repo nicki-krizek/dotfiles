@@ -1,5 +1,35 @@
-export PATH="$PATH:$HOME/.local/bin"
-export QT_QPA_PLATFORMTHEME="qt5ct"
+# Detect session type local
+case $(tty) in
+    /dev/tty[0-2]*)
+    SESSION_TYPE=local/regular ;;
+    /dev/tty[3-9]*)
+    SESSION_TYPE=local/emerg ;;
+    *)
+    SESSION_TYPE=unknown ;;
+esac
 
-# Auto start sway after login on first two VTs
-[[ $XDG_VTNR -le 2 ]] && sway; exit
+# Detect session type remote
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  SESSION_TYPE=remote/ssh
+else
+  case $(ps -o comm= -p $PPID) in
+    sshd|*/sshd) SESSION_TYPE=remote/ssh;;
+  esac
+fi
+
+
+# Common session settings
+export PATH="$PATH:$HOME/.local/bin"
+
+
+# local* session settings
+if [[ "$SESSION_TYPE" = "local"* ]]; then
+    export QT_QPA_PLATFORMTHEME="qt5ct"
+fi
+
+
+# local/regular session settings
+if [[ "$SESSION_TYPE" = "local/regular" ]]; then
+    # Auto start sway after login
+    sway; exit
+fi
