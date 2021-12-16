@@ -1,0 +1,11 @@
+#!/bin/bash
+
+OUTDIR="~/Pictures/scan"
+TODAY="$(date +%Y-%m-%d)"
+NOW="$(date +%H%M%S)"
+LABEL="${1:-$NOW}"
+OUTPATH="${OUTDIR}/${TODAY}_${LABEL}.jpg"
+
+mkdir -p "${OUTDIR}"
+
+scanimage --mode Color --resolution 300 --format jpeg --output-file "${OUTPATH}"

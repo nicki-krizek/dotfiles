@@ -20,6 +20,9 @@ fi
 
 # Common session settings
 export PATH="$PATH:$HOME/.local/bin"
+# BEGIN work
+#export SANE_DEFAULT_DEVICE="airscan:e0:EPSON XP-630 Series"
+# END work
 
 
 # local* session settings
