@@ -151,8 +151,8 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle
 bindsym $mod+Insert exec swaylock -f -c 350000
 
 # Screenshot
-bindsym Print exec grim -t jpeg ~/screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
-bindsym $mod+Print exec grim -t jpeg -g "$(slurp)" ~/screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
+bindsym Print exec grim -t png ~/Pictures/screenshots/$(date +%Y-%m-%d_%H%M%S).png
+bindsym $mod+Print exec grim -t png -g "$(slurp)" ~/Pictures/screenshots/$(date +%Y-%m-%d_%H%M%S).png
 
 
 # Keymap
