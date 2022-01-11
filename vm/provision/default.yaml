@@ -6,7 +6,7 @@
 
   vars:  # defaults
     packager: false
-    knot_resolver_repos: true
+    knot_resolver_repos: false
 
   roles:
     - terminfo
