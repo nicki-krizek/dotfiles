@@ -1,0 +1,28 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+#
+
+Vagrant.configure(2) do |config|
+
+    config.vm.box = "generic/debian11"
+
+    config.vm.define "{{ name }}"  do |vm|
+        vm.vm.provision "ansible" do |ansible|
+            ansible.playbook = "{{ provision_dir }}/default.yaml"
+            ansible.extra_vars = {
+            }
+        end
+    end
+
+{% for guestdir, hostdir in shared_dirs.items() %}
+    config.vm.synced_folder "{{ hostdir }}", "{{ guestdir }}",
+        type: "nfs",
+        nfs_version: 4
+{% endfor %}
+
+    config.vm.provider "libvirt" do |domain, override|
+        domain.cpus = 1
+        domain.memory = 2048
+    end
+
+end

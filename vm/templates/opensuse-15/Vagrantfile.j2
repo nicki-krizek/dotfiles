@@ -4,26 +4,25 @@
 
 Vagrant.configure(2) do |config|
 
-    config.vm.box = ""
+    config.vm.box = "generic/opensuse15"
 
-    config.vm.define "vm_"  do |vm|
+    config.vm.define "{{ name }}"  do |vm|
         vm.vm.provision "ansible" do |ansible|
-            ansible.playbook = "../provision/default.yaml"
+            ansible.playbook = "{{ provision_dir }}/default.yaml"
             ansible.extra_vars = {
             }
         end
     end
 
-    config.vm.synced_folder "./", "/vagrant",
+{% for guestdir, hostdir in shared_dirs.items() %}
+    config.vm.synced_folder "{{ hostdir }}", "{{ guestdir }}",
         type: "nfs"
-    config.vm.synced_folder "/home/tkrizek/git", "/mnt/git",
-        type: "nfs"
-    config.vm.synced_folder "/home/tkrizek/pkg", "/mnt/pkg",
-        type: "nfs"
+{% endfor %}
 
     config.vm.provider "libvirt" do |domain, override|
         domain.cpus = 1
         domain.memory = 2048
+        domain.disk_bus = "sata"
     end
 
 end

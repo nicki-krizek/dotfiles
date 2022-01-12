@@ -1,0 +1,74 @@
+#!/bin/bash
+# vim: filetype=sh
+#
+# Usage: vm-run TEMPLATE [NAME]
+#
+# Creates a vagrant VM from template, spins it up, provisions and drops you into SSH.
+# Upon exit, name-less VMs are destroy. If a name was specified, VM is kept running
+# and you're responsible to clean it up. It's in ~/vm/machines/$NAME.
+#
+# Example:
+#   vm-run debian-11          # temporary debian-11 VM
+#   vm-run ubuntu-20.04 myvm  # persistent "myvm" machines with ubuntu-20.04
+#
+set -o errexit -o nounset
+
+dir="${HOME}/vm"
+template="${1}"
+name="${2:-tmp$(tr -dc a-z0-9 </dev/urandom | head -c 8)}"
+
+shared_dir="${dir}/shared"
+machines_dir="${dir}/machines"
+templates_dir="${dir}/templates"
+provision_dir="${dir}/provision"
+
+# Check template exists
+template_file="${templates_dir}/${template}/Vagrantfile.j2"
+if [ ! -f ${template_file} ]; then
+    echo "${template_fir} not found"; exit 1
+fi
+
+# Create machine dir
+vm_dir="${machines_dir}/${name}"
+mkdir "${vm_dir}"
+pushd "${vm_dir}" &>/dev/null
+
+# Create jinja vars file
+vars_file="${vm_dir}/vars.json"
+cat >"${vars_file}" <<EOF
+{
+    "name": "${name}",
+    "provision_dir": "${provision_dir}",
+    "shared_dirs": {
+        "/mnt": "${shared_dir}"
+EOF
+# Get a list of shared dirs - mount individually to support bind-mounted dirs
+pushd "${shared_dir}" &>/dev/null
+for mntdir in $(find . -maxdepth 1 -mindepth 1 -type d); do
+cat >>"${vars_file}" <<EOF
+        , "/mnt/${mntdir}": "${shared_dir}/${mntdir}"
+EOF
+done
+popd &>/dev/null
+cat >>"${vars_file}" <<EOF
+    }
+}
+EOF
+
+j2 "${template_file}" "${vars_file}" >Vagrantfile
+
+# Setup final cleanup
+cleanup() {
+    if [[ ${name} == tmp* ]]; then
+        vagrant destroy -f
+        rm -rf "${vm_dir}"
+    else
+        echo "${vm_dir}"
+    fi
+    popd &>/dev/null
+}
+trap cleanup EXIT
+
+# Boot and connect
+vagrant up
+vagrant ssh
