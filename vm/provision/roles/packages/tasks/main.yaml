@@ -20,6 +20,7 @@
     name:
       - setroubleshoot
       - bind-utils
+      - ca-certificates
     state: present
   when: ansible_os_family == 'RedHat'
 

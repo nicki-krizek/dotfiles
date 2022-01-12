@@ -17,16 +17,16 @@
     - role: packager
       when: packager
 
-  # HACK: Ansible requires Python 2, but it's not installed by default in all distros
-  gather_facts: false
-  pre_tasks:
-    - name: install python and deps for ansible modules
-      raw: |
-        yum install -y python3 python3-dnf libselinux-python || \
-        pacman -Sy python --noconfirm || \
-        (zypper --gpg-auto-import-keys refresh && zypper install -y python) || \
-        (apt-get update && apt-get install -y python) || \
-        :
-      ignore_errors: true
-    - name: gather facts
-      setup:
+  ## HACK: Ansible requires Python 2, but it's not installed by default in all distros
+  #gather_facts: false
+  #pre_tasks:
+  #  - name: install python and deps for ansible modules
+  #    raw: |
+  #      yum install -y python3 python3-dnf libselinux-python || \
+  #      pacman -Sy python --noconfirm || \
+  #      (zypper --gpg-auto-import-keys refresh && zypper install -y python) || \
+  #      (apt-get update && apt-get install -y python) || \
+  #      :
+  #    ignore_errors: true
+  #  - name: gather facts
+  #    setup:
