@@ -10,6 +10,7 @@ Vagrant.configure(2) do |config|
         vm.vm.provision "ansible" do |ansible|
             ansible.playbook = "{{ provision_dir }}/default.yaml"
             ansible.extra_vars = {
+                apkg: true,
             }
         end
     end

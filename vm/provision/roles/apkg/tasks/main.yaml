@@ -1,0 +1,9 @@
+---
+- package:
+    name: python3-pip
+    state: present
+
+- pip:
+    name: apkg
+
+- command: /usr/local/bin/apkg system-setup
