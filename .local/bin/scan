@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OUTDIR="~/Pictures/scan"
+OUTDIR="${HOME}/Pictures/scan"
 TODAY="$(date +%Y-%m-%d)"
 NOW="$(date +%H%M%S)"
 LABEL="${1:-$NOW}"
