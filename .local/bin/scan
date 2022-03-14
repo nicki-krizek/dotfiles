@@ -9,3 +9,4 @@ OUTPATH="${OUTDIR}/${TODAY}_${LABEL}.jpg"
 mkdir -p "${OUTDIR}"
 
 scanimage --mode Color --resolution 300 --format jpeg --output-file "${OUTPATH}"
+echo "${OUTPATH}"
