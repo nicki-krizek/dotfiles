@@ -194,10 +194,12 @@ exec --no-startup-id gpg-connect-agent updatestartuptty /bye
 exec --no-startup-id sleep 1; swaylock -f -c 350000
 
 # Auto-lock and poweroff monitors on idle
-exec swayidle -w \
-	timeout 600 'swaylock -f -c 350000' \
-	timeout 605 'swaymsg "output * dpms off"' \
-	resume 'swaymsg "output * dpms on"'
+# BEGIN work
+#exec swayidle -w \
+#	timeout 600 'swaylock -f -c 350000' \
+#	timeout 605 'swaymsg "output * dpms off"' \
+#	resume 'swaymsg "output * dpms on"'
+# END work
 
 # Ensure clipboard works cross-window even after window is closed (e.g. passmenu)
 exec wl-paste -t text --watch clipman store
