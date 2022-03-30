@@ -1,0 +1,15 @@
+# BEGIN cheetah
+#timeout 3600 'swaylock'
+#timeout 3610 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+# END cheetah
+# BEGIN granite
+timeout 10800 'swaylock'
+timeout 10810 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+# END cheetah
+# BEGIN katze
+#timeout 10800 'swaylock'
+#timeout 10810 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+# END katze
+
+# Turn off screen after locking
+timeout 10 "if pgrep -x --uid $(id -u) swaylock; then swaymsg 'output * dpms off'; fi" resume 'swaymsg "output * dpms on"'
