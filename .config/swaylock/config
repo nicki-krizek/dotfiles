@@ -1,0 +1,11 @@
+daemonize
+
+# BEGIN public
+#color=241500
+# END public
+# BEGIN protected
+#color=001800
+# END protected
+# BEGIN private
+#color=200020
+# END private
