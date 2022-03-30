@@ -148,7 +148,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec amixer set Capture toggle
 
 # Screenlock
-bindsym $mod+Insert exec swaylock -f -c 350000
+bindsym $mod+Insert exec swaylock
 
 # Screenshot
 bindsym Print exec grim -t png ~/Pictures/screenshots/$(date +%Y-%m-%d_%H%M%S).png
@@ -164,9 +164,11 @@ input * {
 
 
 # Switch turn off laptop monitor when lid is closed
-set $laptop eDP-1
-bindswitch --reload --locked lid:on output $laptop disable
-bindswitch --reload --locked lid:off output $laptop enable
+# BEGIN laptop
+#set $laptop eDP-1
+#bindswitch --reload --locked lid:on output $laptop disable
+#bindswitch --reload --locked lid:off output $laptop enable
+# END laptop
 
 
 # Wallpaper
@@ -179,27 +181,22 @@ assign [class="^Thunderbird$"] 5
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-# BEGIN work
+# BEGIN public
 #client.focused          #cc7100 #ff9900 #ffffff #e6e600   #ffad33
-# END work
-# BEGIN personal
-#client.focused          #004d00 #006600 #ffffff #00e600   #009900
-# END personal
+# END public
+# BEGIN protected
+#client.focused          #008500 #005f00 #ffffff #00d200   #008500
+# END protected
+# BEGIN private
+#client.focused          #a500a8 #800082 #ffffff #f000f4   #a500a8
+# END private
 
 
 # Startup scripts / applications
 exec --no-startup-id gpg-connect-agent updatestartuptty /bye
 
-# Auto-lock on startup
-exec --no-startup-id sleep 1; swaylock -f -c 350000
-
-# Auto-lock and poweroff monitors on idle
-# BEGIN work
-#exec swayidle -w \
-#	timeout 600 'swaylock -f -c 350000' \
-#	timeout 605 'swaymsg "output * dpms off"' \
-#	resume 'swaymsg "output * dpms on"'
-# END work
+# Idle session manager - locking and screen off
+exec swayidle -w
 
 # Ensure clipboard works cross-window even after window is closed (e.g. passmenu)
 exec wl-paste -t text --watch clipman store
