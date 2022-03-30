@@ -8,5 +8,5 @@ OUTPATH="${OUTDIR}/${TODAY}_${LABEL}.jpg"
 
 mkdir -p "${OUTDIR}"
 
-scanimage -d "escl:http://192.168.42.116:443" --mode Color --resolution 300 --format jpeg --output-file "${OUTPATH}"
+scanimage --mode Color --resolution 300 --format jpeg --output-file "${OUTPATH}"
 echo "${OUTPATH}"
