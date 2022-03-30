@@ -1,21 +1,21 @@
 [user]
-# BEGIN personal
+# BEGIN protected
 	#signingkey = 0xB2F27B7221DCD363
-# END personal
-# BEGIN work
-	#email = tomas.krizek@nic.cz
-	#name = Tomas Krizek
+# END protected
+# BEGIN public
+	#email = tkrizek@isc.org
+	#name = Tom Krizek
 	#signingkey = 0xA1FBA5F7EF8C4869
-# END work
+# END public
 [gpg]
 	program = gpg2
 [commit]
-# BEGIN personal
+# BEGIN protected
 	#gpgsign = false
-# END personal
-# BEGIN work
+# END protected
+# BEGIN public
 	#gpgsign = true
-# END work
+# END public
 [core]
 	excludesfile = ~/.gitignore
 [log]
