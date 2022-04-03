@@ -5,7 +5,7 @@
 # BEGIN public
 	#email = tkrizek@isc.org
 	#name = Tom Krizek
-	#signingkey = 0xA1FBA5F7EF8C4869
+	#signingkey = 0x01623B9B652A20A7
 # END public
 [gpg]
 	program = gpg2
