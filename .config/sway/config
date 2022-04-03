@@ -200,3 +200,6 @@ exec swayidle -w
 
 # Ensure clipboard works cross-window even after window is closed (e.g. passmenu)
 exec wl-paste -t text --watch clipman store
+
+# Screencast/screenshot https://github.com/emersion/xdg-desktop-portal-wlr#running
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
