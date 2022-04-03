@@ -19,7 +19,7 @@ autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType js setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType md setlocal textwidth=80
+autocmd FileType markdown setlocal textwidth=80
 autocmd FileType sh setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType rst setlocal foldmethod=manual
 autocmd BufWritePost *.py call Flake8()
