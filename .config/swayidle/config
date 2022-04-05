@@ -13,3 +13,5 @@ timeout 10810 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 
 # Turn off screen after locking
 timeout 10 "if pgrep -x --uid $(id -u) swaylock; then swaymsg 'output * dpms off'; fi" resume 'swaymsg "output * dpms on"'
+
+before-sleep 'swaylock'
