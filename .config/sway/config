@@ -154,6 +154,8 @@ bindsym $mod+Insert exec swaylock
 bindsym Print exec grim -t png ~/Pictures/screenshots/$(date +%Y-%m-%d_%H%M%S).png
 bindsym $mod+Print exec grim -t png -g "$(slurp)" ~/Pictures/screenshots/$(date +%Y-%m-%d_%H%M%S).png
 
+# Switch monitors
+bindsym Pause exec monswitch
 
 # Keymap
 input * {
