@@ -47,3 +47,4 @@ set hls
 
 " key bindings
 map <F10> :Black <enter>
+map <F11> :Mypy <enter>
