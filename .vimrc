@@ -46,4 +46,4 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0
 set hls
 
 " key bindings
-map <F12> :!luacheck % <enter>
+map <F10> :Black <enter>
