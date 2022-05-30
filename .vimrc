@@ -33,8 +33,11 @@ autocmd BufWritePre * :%s/\s\+$//e
 execute pathogen#infect()
 
 syntax enable
-set background=dark
 colorscheme solarized
+
+" BEGIN dark
+"set background=dark
+" END dark
 
 set scrolloff=8
 
