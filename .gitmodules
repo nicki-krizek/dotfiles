@@ -1,9 +1,3 @@
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule ".mc/lib/mc_solarized_light"]
-	path = .mc/lib/mc_solarized_light
-	url = https://github.com/seraphyn/mc_solarized_light.git
 [submodule ".vim/bundle/vim-flake8"]
 	path = .vim/bundle/vim-flake8
 	url = https://github.com/nvie/vim-flake8.git
