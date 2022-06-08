@@ -35,6 +35,7 @@ execute pathogen#infect()
 syntax enable
 
 set scrolloff=8
+set nojoinspaces
 
 "custom colors for indent-guides
 let g:indent_guides_auto_colors = 0
