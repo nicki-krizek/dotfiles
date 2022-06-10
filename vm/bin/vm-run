@@ -25,7 +25,7 @@ provision_dir="${dir}/provision"
 # Check template exists
 template_file="${templates_dir}/${template}/Vagrantfile.j2"
 if [ ! -f ${template_file} ]; then
-    echo "${template_fir} not found"; exit 1
+    echo "${template_file} not found"; exit 1
 fi
 
 # Create machine dir

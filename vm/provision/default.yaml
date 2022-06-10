@@ -6,15 +6,12 @@
 
   vars:  # defaults
     packager: false
-    knot_resolver_repos: false
     apkg: true
 
   roles:
     - terminfo
     - packages
     - configuration
-    - role: obs_repos
-      when: knot_resolver_repos
     - role: packager
       when: packager
     - role: apkg

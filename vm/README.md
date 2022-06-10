@@ -8,6 +8,8 @@ transitory by default so it works similarly to `docker run`
 - vagrant
 - libvirt, qemu, vagrant-libvirt (should work with virtualbox also)
 - nfs
+- ansible
+- python-j2cli
 
 - automate NFS exports (for Arch)
 
