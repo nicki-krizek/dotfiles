@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/vim-mypy"]
 	path = .vim/bundle/vim-mypy
 	url = https://github.com/flebel/vim-mypy.git
+[submodule ".vim/bundle/vim-hcl"]
+	path = .vim/bundle/vim-hcl
+	url = https://github.com/jvirtanen/vim-hcl.git
