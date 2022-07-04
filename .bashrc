@@ -33,9 +33,6 @@ export MAKEFLAGS='-j 5'
 export LIBVIRT_DEFAULT_URI=qemu:///system
 export VAGRANT_DEFAULT_PROVIDER="libvirt"
 
-export DEBEMAIL="tomas.krizek@nic.cz"
-export DEBFULLNAME="Tomas Krizek"
-
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HISTTIMEFORMAT="[%F %T] "
