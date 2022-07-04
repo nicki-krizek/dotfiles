@@ -25,6 +25,13 @@ alias confgit="git --git-dir $HOME/.config/conf.git --work-tree $HOME"
 alias docker-compose="podman-compose"
 alias gpg-yubi='gpg-connect-agent "scd serialno" "learn --force" /bye'
 
+# BEGIN public
+#alias b9git="cd ~/git/bind9"
+#alias b9clean="cd ~/git/bind9 && git clean -dfx && git reset --hard"
+#alias b9build="cd ~/git/bind9 && autoreconf -fiv && ./configure && make all"
+#alias b9cbuild="cd ~/git/bind9 && git clean -dfx && git reset --hard && autoreconf -fiv && ./configure && make all"
+# END public
+
 export SSH_AUTH_SOCK=/run/user/$UID/gnupg/S.gpg-agent.ssh
 
 export EDITOR=/usr/bin/vim
