@@ -23,7 +23,7 @@ alias ni="ninja -C build_dev install"
 alias ipa='echo "Nebudu to delat!"; sleep 1; ip a'
 alias confgit="git --git-dir $HOME/.config/conf.git --work-tree $HOME"
 alias docker-compose="podman-compose"
-alias gpg-yubi='gpg-connect-agent "scd serialno" "learn --force" /bye'
+alias gpg-yubi='gpg-connect-agent "scd serialno" "learn --force" /bye && echo UPDATESTARTUPTTY | gpg-connect-agent'
 
 # BEGIN public
 #alias b9git="cd ~/git/bind9"
