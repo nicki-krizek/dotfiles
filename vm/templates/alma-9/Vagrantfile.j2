@@ -14,9 +14,6 @@ Vagrant.configure(2) do |config|
         end
     end
 
-    # https://github.com/AlmaLinux/cloud-images/issues/9#issuecomment-812954450
-    config.nfs.verify_installed = false
-
 {% for guestdir, hostdir in shared_dirs.items() %}
     config.vm.synced_folder "{{ hostdir }}", "{{ guestdir }}",
         type: "nfs",
