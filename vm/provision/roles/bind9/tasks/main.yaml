@@ -1,0 +1,24 @@
+---
+- name: set up bind-dev COPR
+  get_url:
+    dest: /etc/yum.repos.d/isc-bind-dev-epel-9.repo
+    url: https://copr.fedorainfracloud.org/coprs/isc/bind-dev/repo/epel-9/isc-bind-dev-epel-9.repo
+
+- name: install isc-bind
+  package:
+    name: isc-bind
+    state: latest
+
+- name: enable DNS in firewalld
+  firewalld:
+    zone: public
+    immediate: true
+    permanent: true
+    service: dns
+    state: enabled
+
+- name: start&enable isc-bind-named.service
+  systemd:
+    name: isc-bind-named.service
+    enabled: true
+    state: started

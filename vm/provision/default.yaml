@@ -7,6 +7,7 @@
   vars:  # defaults
     packager: false
     apkg: true
+    bind9: false
 
   roles:
     - terminfo
@@ -16,6 +17,8 @@
       when: packager
     - role: apkg
       when: apkg
+    - role: bind9
+      when: bind9
 
   ## HACK: Ansible requires Python 2, but it's not installed by default in all distros
   #gather_facts: false
