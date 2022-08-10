@@ -36,3 +36,16 @@
     name: nfs-utils
     state: present
   when: ansible_os_family == 'RedHat' and ansible_distribution_major_version|int >= 8
+
+- name: install epel-release
+  dnf:
+    name: epel-release
+    state: present
+  when: ansible_os_family == 'RedHat'
+
+- name: enable AlmaLinux repositories
+  ansible.builtin.replace:
+    path: /etc/yum.repos.d/almalinux-crb.repo
+    regexp: enabled=0
+    replace: enabled=1
+  when: ansible_os_family == 'RedHat' and ansible_distribution_major_version|int >= 9
