@@ -18,6 +18,7 @@
 - name: install RedHat packages
   package:
     name:
+      - podman
       - setroubleshoot
       - bind-utils
       - ca-certificates

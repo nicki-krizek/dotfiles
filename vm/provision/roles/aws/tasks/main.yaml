@@ -1,0 +1,23 @@
+---
+- name: install awscli
+  package:
+    name: awscli
+    state: present
+
+- name: mkdir .aws
+  file:
+    path: /root/.aws
+    state: directory
+
+- name: configure aws
+  copy:
+    src: /home/tkrizek/.aws/credentials
+    dest: /root/.aws/credentials
+    mode: "0600"
+
+- name: login to ECR
+  shell:
+    cmd: "aws ecr get-login-password | podman login --username AWS --password-stdin 766250944489.dkr.ecr.us-east-1.amazonaws.com"
+  register: ecr_login
+  until: "ecr_login is not failed"
+  retries: 3

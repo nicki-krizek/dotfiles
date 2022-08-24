@@ -8,6 +8,8 @@
     packager: false
     apkg: false
     bind9: false
+    aws: false
+    firewalld: false
 
   roles:
     - terminfo
@@ -19,6 +21,10 @@
       when: apkg
     - role: bind9
       when: bind9
+    - role: aws
+      when: aws
+    - role: firewalld
+      when: firewalld
 
   ## HACK: Ansible requires Python 2, but it's not installed by default in all distros
   #gather_facts: false
