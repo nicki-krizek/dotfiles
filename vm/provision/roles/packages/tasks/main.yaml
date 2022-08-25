@@ -13,6 +13,7 @@
       - git
       - tmux
       - tree
+      - tcpdump
     state: present
 
 - name: install RedHat packages
