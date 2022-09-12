@@ -1,0 +1,9 @@
+#!/bin/bash
+set -o nounset -o errexit
+
+gitdir=$(git rev-parse --show-toplevel)
+
+cd "$gitdir"
+git clean -dfx
+git reset --hard
+git checkout "$@"
