@@ -29,8 +29,8 @@ alias acm="autoreconf -fiv && ./configure && make"
 # BEGIN public
 #alias b9git="cd ~/git/bind9"
 #alias b9clean="cd ~/git/bind9 && git clean -dfx && git reset --hard"
-#alias b9build="cd ~/git/bind9 && autoreconf -fiv && ./configure && make all"
-#alias b9cbuild="cd ~/git/bind9 && git clean -dfx && git reset --hard && autoreconf -fiv && ./configure && make all"
+#alias b9build="cd ~/git/bind9 && autoreconf -fiv && ./configure --disable-maintainer-mode --enable-developer --enable-option-checking=fatal --enable-dnstap --with-cmocka --with-libxml2 --with-json-c --enable-leak-detection --with-libidn2 && make all"
+#alias b9cbuild="cd ~/git/bind9 && git clean -dfx && git reset --hard && autoreconf -fiv && ./configure --disable-maintainer-mode --enable-developer --enable-option-checking=fatal --enable-dnstap --with-cmocka --with-libxml2 --with-json-c --enable-leak-detection --with-libidn2 && make all"
 # END public
 
 export SSH_AUTH_SOCK=/run/user/$UID/gnupg/S.gpg-agent.ssh
