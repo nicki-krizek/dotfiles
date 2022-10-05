@@ -24,11 +24,10 @@ alias ipa='echo "Nebudu to delat!"; sleep 1; ip a'
 alias confgit="git --git-dir $HOME/.config/conf.git --work-tree $HOME"
 alias docker-compose="podman-compose"
 alias gpg-yubi='gpg-connect-agent "scd serialno" "learn --force" /bye && echo UPDATESTARTUPTTY | gpg-connect-agent'
-alias acm="autoreconf -fiv && ./configure && make"
 
 # BEGIN public
 #alias b9git="cd ~/git/bind9"
-#alias b9build="cd ~/git/bind9 && autoreconf -fiv && ./configure --disable-maintainer-mode --enable-developer --enable-option-checking=fatal --enable-dnstap --with-cmocka --with-libxml2 --with-json-c --enable-leak-detection --with-libidn2 && make all"
+#alias acm="autoreconf -fiv && ./configure --disable-maintainer-mode --enable-developer --enable-option-checking=fatal --enable-dnstap --with-cmocka --with-libxml2 --with-json-c --enable-leak-detection --with-libidn2 && make all"
 # END public
 
 export SSH_AUTH_SOCK=/run/user/$UID/gnupg/S.gpg-agent.ssh
