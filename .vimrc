@@ -42,5 +42,6 @@ colorscheme torte
 set hls
 
 " key bindings
+set pastetoggle=<F3>
 map <F10> :Black <enter>
 map <F11> :Mypy <enter>
