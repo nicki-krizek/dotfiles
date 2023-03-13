@@ -23,9 +23,6 @@ autocmd FileType markdown setlocal textwidth=80
 autocmd FileType sh setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType rst setlocal foldmethod=manual
 
-" project-specific settings
-autocmd BufNewFile,BufRead /home/tkrizek/git/dnsjit/* set tabstop=4 shiftwidth=4 expandtab
-
 "remove whitepaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -45,3 +42,7 @@ set hls
 set pastetoggle=<F3>
 map <F10> :Black <enter>
 map <F11> :Mypy <enter>
+
+" project-specific settings
+autocmd BufNewFile,BufRead /home/tkrizek/git/dnsjit/* setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd BufNewFile,BufRead tests.sh setlocal tabstop=8 shiftwidth=8
