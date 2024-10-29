@@ -20,7 +20,7 @@ fi
 
 # Common session settings
 export PATH="$PATH:$HOME/.local/bin"
-export SANE_DEFAULT_DEVICE="escl:http://192.168.42.116:443"
+export SANE_DEFAULT_DEVICE="escl:http://192.168.42.216:443"
 export XDG_CURRENT_DESKTOP=sway
 
 
