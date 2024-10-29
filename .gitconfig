@@ -34,3 +34,10 @@
 	cmd = kitty kitty +kitten diff $LOCAL $REMOTE
 [checkout]
 	defaultRemote = origin
+[rerere]
+	enabled = true
+[alias]
+	re = config --local rerere.enabled true
+	rd = config --local rerere.enabled false
+	rs = config --local --get rerere.enabled
+	pushf = push --force-with-lease
