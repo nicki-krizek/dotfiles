@@ -27,7 +27,7 @@ alias gpg-yubi='gpg-connect-agent "scd serialno" "learn --force" /bye && echo UP
 
 # BEGIN public
 #alias b9git="cd ~/git/bind9"
-#alias acm="autoreconf -fiv && ./configure --disable-maintainer-mode --enable-developer --enable-dnstap --enable-dnsrps && make all"
+#alias acm="autoreconf -fiv && ./configure --disable-maintainer-mode --enable-developer --enable-dnstap && make all"
 # END public
 
 export SSH_AUTH_SOCK=/run/user/$UID/gnupg/S.gpg-agent.ssh
