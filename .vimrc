@@ -1,5 +1,5 @@
 set number
-set clipboard=unnamed
+set clipboard=unnamedplus
 set wildmode=longest,list
 set autoindent
 

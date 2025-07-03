@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/editorconfig-vim"]
 	path = .vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule ".vim/bundle/vim-wayland-clipboard"]
+	path = .vim/bundle/vim-wayland-clipboard
+	url = https://github.com/jasonccox/vim-wayland-clipboard.git
