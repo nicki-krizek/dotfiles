@@ -1,3 +1,14 @@
 # setup on new machines
 $ git clone --bare https://github.com/nicki-krizek/dotfiles.git "$HOME/.config/conf.git"
 $ git --git-dir "$HOME/.config/conf.git" --work-tree "$HOME" checkout master
+
+$ confgit submodule update --init
+$ echo "*" >> ~/.config/conf.git/info/exclude
+
+# ~/.config/conf.git/config
+[filter "qualia"]
+	clean = qualia
+	smudge = qualia laptop cheetah public light
+[remote "mygh"]
+	url = git@github.com:nicki-krizek/dotfiles.git
+	fetch = +refs/heads/*:refs/remotes/mygh/*
