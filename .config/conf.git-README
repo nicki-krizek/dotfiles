@@ -1,0 +1,3 @@
+# setup on new machines
+$ git clone --bare https://github.com/nicki-krizek/dotfiles.git "$HOME/.config/conf.git"
+$ git --git-dir "$HOME/.config/conf.git" --work-tree "$HOME" checkout master
