@@ -1,9 +1,0 @@
-#!/bin/bash
-set -o errexit -o nounset -o xtrace
-
-TARGET=${1}
-BASE=${2:-origin/master}
-
-git checkout $BASE
-git submodule update --init --recursive
-git checkout -b $TARGET
