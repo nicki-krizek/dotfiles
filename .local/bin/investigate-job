@@ -2,7 +2,7 @@
 
 jobid=$1
 
-jobdir=~/playground/jobs/${jobid}
+jobdir=~/pg/jobs/${jobid}
 rm -rf $jobdir
 mkdir -p $jobdir
 cd $jobdir
