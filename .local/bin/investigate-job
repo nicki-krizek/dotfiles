@@ -1,0 +1,12 @@
+#!/bin/bash
+
+jobid=$1
+
+jobdir=~/playground/jobs/${jobid}
+rm -rf $jobdir
+mkdir -p $jobdir
+cd $jobdir
+wget -LO artifacts.zip https://gitlab.isc.org/isc-projects/bind9/-/jobs/$jobid/artifacts/download
+unzip artifacts.zip &>/dev/null
+rm artifacts.zip
+echo $jobdir
