@@ -138,8 +138,8 @@ bar {
 }
 
 # Multimedia keys - brightness
-bindsym XF86MonBrightnessUp exec brightness up
-bindsym XF86MonBrightnessDown exec brightness down
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 # Multimedia keys - volume
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +3dB
