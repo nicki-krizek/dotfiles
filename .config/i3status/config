@@ -15,6 +15,9 @@ order += "vpn_status"
 #order += "wireless wlp3s0"
 #order += "ethernet enp6s0"
 # END cheetah
+# BEGIN lynx
+#order += "wireless wlp194s0"
+# END lynx
 order += "disk /"
 # BEGIN granite
 #order += "disk /srv"
@@ -45,7 +48,7 @@ battery 0 {
 }
 
 volume_status {
-	command = "amixer"
+	command = "pactl"
 	cache_timeout = 1
 	format = "♪ {percentage}%"
 	format_muted = "♪ ({percentage}%)"
